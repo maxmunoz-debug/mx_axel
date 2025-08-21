@@ -1,0 +1,276 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    overflow: hidden;
+}
+
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
+.card-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #e91e63;
+}
+
+.message-text {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#yes-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+#no-btn {
+    background-color: #f44336;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+}
+
+.hidden-message {
+    display: none;
+}
+
+#romantic-message {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.visible-message {
+    display: block !important;
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Ajustes responsive para móviles */
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+        height: 100vh;
+        font-size: 1em;
+    }
+
+    .card-container,
+    #romantic-message {
+        padding: 15px;
+        max-width: 98vw;
+        width: 98vw;
+        font-size: 1em;
+    }
+
+    .button-container {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+    }
+
+    button {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 1em;
+        padding: 12px 0;
+        display: block;
+    }
+
+    #no-btn {
+        left: 55%;
+        top: 60%;
+    }
+}
+
+/* ...existing code... */
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -100;
+    pointer-events: none;
+    background: #000;
+}
+
+/* ...existing code... */
+/* ...existing code... */
+
+.button-container {
+    display: flex;
+    flex-direction: row;      /* Alinea los botones en fila */
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    gap: 30px;                /* Espacio entre botones */
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+/* Ajustes responsive para móviles */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column; /* En móvil, uno debajo del otro */
+        gap: 20px;
+    }
+}
+/* ...existing code... */
+/* Estilo compartido para las cajas */
+.box-style {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Aplica el estilo a los dos contenedores */
+.card-container {
+    /* Mantenemos las propiedades de posición que son únicas */
+    position: relative;
+    z-index: 1;
+}
+
+#romantic-message {
+    /* Mantenemos las propiedades de posición y animación que son únicas */
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* El resto de tu código CSS se mantiene igual */
+/* Estilo compartido para las cajas */
+.box-style {
+    /* ... (tu estilo actual de la caja) ... */
+}
+
+/* Contenedor principal para ambos elementos */
+.page-content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 350px; /* Ajusta la altura si es necesario */
+}
+
+/* Estilo para las dos "pantallas" */
+.screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s ease-in-out;
+}
+
+/* El mensaje romántico debe estar oculto al inicio */
+#romantic-message {
+    opacity: 0;
+    pointer-events: none; /* Esto evita que el usuario pueda hacer clic en él cuando está oculto */
+}
+
+/* La clase que los hace visibles */
+.visible-message {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* La clase para ocultar la primera pantalla */
+.hidden-screen {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+/* Estilo para el botón de salir */
+.exit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #607d8b; /* Un color gris/azul para diferenciarlo */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.exit-button:hover {
+    background-color: #455a64;
+}
+/* Media Query para pantallas pequeñas, como celulares */
+@media (max-width: 600px) {
+    /* Reduce el tamaño del texto y el relleno de los botones */
+    button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    /* Ajusta la posición del botón "No" para que no se salga de la pantalla */
+    #no-btn {
+        top: 60%;
+        left: 55%;
+    }
+
+    /* Reduce el tamaño del título y los textos en pantallas pequeñas */
+    h1 {
+        font-size: 1.5em;
+    }
+    .message-text {
+        font-size: 1em;
+    }
+
+    /* Asegura que el contenedor del mensaje romántico se adapte bien */
+    #romantic-message {
+        padding: 20px;
+    }
+}

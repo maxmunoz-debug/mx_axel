@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <video autoplay muted loop id="video-background">
+        <source src="tulipanes-animacion.mp4" type="video/mp4">
+        Tu navegador no soporta el video de fondo.
+    </video>
+
+    <audio id="romantic-song" src="tu-cancion.mp3"></audio>
+
+    <div class="card-container">
+        <h1>¡Hola Esmeralda ❤️!</h1>
+        <p>He estado pensando en ti y...</p>
+        <p class="message-text">... quiero decirte que me gustas mucho, voy a ser directo. ¿Puedo ser tu enamorado?</p>
+        
+        <div class="button-container">
+            <button id="yes-btn">Sí</button>
+            <button id="no-btn">No</button>
+        </div>
+    </div>
+    
+    <div id="romantic-message" class="hidden-message">
+        <h2>¡Sabía que dirías que sí! ❤️</h2>
+        <p>¡Has hecho a un chico muy feliz!</p>
+        <p>Espero verte pronto para planear nuestra primera cita.</p>
+        <button id="exit-btn" class="exit-button">Salir</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.js"></script>
+    <script src="script.js"></script>
+</body>
